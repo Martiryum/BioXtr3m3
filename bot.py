@@ -1,6 +1,6 @@
 import logging
 from telegram import Update
-​from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler
+from telegram.ext import ApplicationBuilder, ContexTypes, CommandHandler
 ​async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 await context.bot.send_message(chat_id=update.effective_chat.id, text="I'm a bot, please talk to me!")
 ​if name == 'main':
