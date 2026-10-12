@@ -1,10 +1,22 @@
 import logging
+import os
 from telegram import Update
-from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler
-async def start(update: Update, contex: ContexTypes.DEFAULT_TYPE):
-    await context.bot.send_message(chat_id=update.effective_chat.id, text="I'm a bot, please talk to me!")
+from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
-application = ApplicationBuilder().token('8487022975:AAH0MmFQEnjEastyxRWnKT-SxVBPyXJqda0').build()
-start_handler = CommandHandler('start', start)
-application.add_handler(start_handler)
-application.run_polling()
+TOKEN = os.getenv("TELEGRAM_TOKEN")
+
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text("¡Hola! Soy tu bot funcionando hablame.")
+
+def main():
+    app = ApplicationBuilder().token('8487022975:AAH0MmFQEnjEastyxRWnKT-SxVBPyXJqda0').build()
+    app.add_handler(CommandHandler("start", start))
+    app.run_polling()
+
+if __name__ == "__main__":
+    main()
+
+python-telegram-bot
+
+worker: python bot.py
+
