@@ -17,6 +17,3 @@ if __name__ == "__main__":
     main()
 
 python-telegram-bot
-
-worker: python bot.py
-
